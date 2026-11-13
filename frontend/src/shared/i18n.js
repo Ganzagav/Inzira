@@ -1,0 +1,76 @@
+// Public app languages: rw (Kinyarwanda, primary), en, fr, sw.
+// Have native speakers review these before any public release.
+export const LANGS = [
+  { code: 'rw', label: 'Kinyarwanda' },
+  { code: 'en', label: 'English' },
+  { code: 'fr', label: 'Français' },
+  { code: 'sw', label: 'Kiswahili' },
+];
+const L = (rw, en, fr, sw) => ({ rw, en, fr, sw });
+
+const D = {
+  tagline: L("Inzira yihuta kandi ikwiye mu mihanda y'u Rwanda", "The fastest suitable route for Rwanda's roads", "L'itinéraire le plus rapide adapté aux routes du Rwanda", 'Njia ya haraka na inayofaa kwa barabara za Rwanda'),
+  from: L('Aho uva', 'From', 'Départ', 'Kutoka'),
+  to: L('Aho ujya', 'To', 'Destination', 'Kwenda'),
+  searchPlaceholder: L('Shakisha ahantu cyangwa ukande ku ikarita', 'Search a place or tap the map', 'Chercher un lieu ou toucher la carte', 'Tafuta mahali au gusa ramani'),
+  myLocation: L('Aho ndi', 'My location', 'Ma position', 'Mahali nilipo'),
+  pickOnMap: L('Hitamo ku ikarita', 'Pick on map', 'Choisir sur la carte', 'Chagua kwenye ramani'),
+  picking: L('Kanda ku ikarita ushyireho {which}', 'Tap the map to set {which}', 'Touchez la carte pour définir {which}', 'Gusa ramani kuweka {which}'),
+  near: L('Hafi ya {name}', 'Near {name}', 'Près de {name}', 'Karibu na {name}'),
+  swap: L('Hindura', 'Swap', 'Inverser', 'Badilisha'),
+  fastest: L('Yihuta', 'Fastest', 'Plus rapide', 'Ya haraka'),
+  shortest: L('Ngufi', 'Shortest', 'Plus courte', 'Fupi zaidi'),
+  alternative: L('Indi nzira', 'Alternative', 'Alternative', 'Mbadala'),
+  time: L('Igihe', 'Time', 'Durée', 'Muda'),
+  distance: L('Intera', 'Distance', 'Distance', 'Umbali'),
+  fuel: L('Lisansi', 'Fuel', 'Carburant', 'Mafuta'),
+  saves: L("Inzira yihuta igabanya iminota {min} ugereranyije n'ingufi", 'The fastest route saves {min} min over the shortest', 'Gagne {min} min par rapport à la plus courte', 'Njia ya haraka inaokoa dakika {min} kuliko fupi zaidi'),
+  sameRoute: L('Inzira yihuta ni na yo ngufi', 'The fastest route is also the shortest', 'La plus rapide est aussi la plus courte', 'Njia ya haraka ndiyo fupi zaidi'),
+  directions: L("Amabwiriza y'inzira", 'Directions', 'Indications', 'Maelekezo'),
+  turn_start: L('Tangira kuri', 'Start on', 'Départ sur', 'Anza kwenye'),
+  turn_straight: L('Komeza kuri', 'Continue onto', 'Continuer sur', 'Endelea kwenye'),
+  turn_left: L('Hindukirira ibumoso kuri', 'Turn left onto', 'Tourner à gauche sur', 'Geuka kushoto kwenye'),
+  turn_right: L('Hindukirira iburyo kuri', 'Turn right onto', 'Tourner à droite sur', 'Geuka kulia kwenye'),
+  turn_uturn: L('Subira inyuma kuri', 'Make a U-turn onto', 'Faire demi-tour sur', 'Rudi nyuma kwenye'),
+  unnamed: L('umuhanda utagira izina', 'unnamed road', 'route sans nom', 'barabara isiyo na jina'),
+  warn_construction: L('Ubwubatsi kuri', 'Roadworks on', 'Travaux sur', 'Ujenzi kwenye'),
+  warn_unpaved: L('Umuhanda utari kaburimbo:', 'Unpaved section:', 'Section non goudronnée :', 'Barabara isiyo ya lami:'),
+  warn_heavy_traffic: L('Imodoka nyinshi kuri', 'Heavy traffic on', 'Fort trafic sur', 'Msongamano mkubwa kwenye'),
+  avoidUnpaved: L('Irinde imihanda itari kaburimbo', 'Avoid unpaved roads', 'Éviter les routes non goudronnées', 'Epuka barabara zisizo za lami'),
+  showTraffic: L("Erekana uko imodoka ziri", 'Show live traffic', 'Afficher le trafic en direct', 'Onyesha msongamano wa moja kwa moja'),
+  alerts: L("Ibimenyeshwa by'ako kanya", 'Live alerts', 'Alertes en direct', 'Taarifa za moja kwa moja'),
+  noAlerts: L('Nta kibazo kiriho', 'No active alerts', 'Aucune alerte active', 'Hakuna tahadhari'),
+  until: L('kugeza {time}', 'until {time}', "jusqu'à {time}", 'hadi {time}'),
+  closed: L('Umuhanda urafunze', 'Road closed', 'Route fermée', 'Barabara imefungwa'),
+  roadworks: L('Ubwubatsi', 'Roadworks', 'Travaux', 'Ujenzi'),
+  accident: L('Impanuka', 'Accident', 'Accident', 'Ajali'),
+  heavy_traffic: L('Imodoka nyinshi', 'Heavy traffic', 'Fort trafic', 'Msongamano mkubwa'),
+  legend: L("Ubwinshi bw'imodoka", 'Traffic', 'Trafic', 'Msongamano'),
+  level0: L('Nta mbogamizi', 'Free flow', 'Fluide', 'Huru'),
+  level1: L('Nke', 'Light', 'Léger', 'Kidogo'),
+  level2: L('Hagati', 'Moderate', 'Modéré', 'Wastani'),
+  level3: L('Nyinshi', 'Heavy', 'Dense', 'Mkubwa'),
+  level4: L('Yahagaze', 'Standstill', 'Bloqué', 'Imesimama'),
+  vehicles: L('Ikinyabiziga kiri kuri sisitemu', 'Vehicle on the system', 'Véhicule connecté', 'Gari lililounganishwa'),
+  startNav: L('Tangira kukuyobora', 'Start navigation', 'Démarrer la navigation', 'Anza urambazaji'),
+  stopNav: L('Hagarika', 'Stop', 'Arrêter', 'Simamisha'),
+  following: L('Turakurikira aho uri', 'Following your location', 'Suivi de votre position', 'Tunafuata eneo lako'),
+  arrived: L('Wageze iyo ujya', 'You have arrived', 'Vous êtes arrivé', 'Umefika'),
+  shareProbes: L('Sangiza umuvuduko wanjye nta zina kugira ngo dufashe abandi', 'Share my speed anonymously to help others', 'Partager ma vitesse anonymement pour aider les autres', 'Shiriki kasi yangu bila jina kusaidia wengine'),
+  copyLink: L('Koporora link', 'Copy link', 'Copier le lien', 'Nakili kiungo'),
+  copied: L('Byakoporowe', 'Copied', 'Copié', 'Imenakiliwa'),
+  policePortal: L("Urubuga rw'abapolisi", 'Traffic police portal', 'Portail police routière', 'Lango la polisi wa barabara'),
+  loading: L('Biraza…', 'Loading…', 'Chargement…', 'Inapakia…'),
+  noRoute: L('Nta nzira ibonetse', 'No route found', 'Aucun itinéraire trouvé', 'Hakuna njia iliyopatikana'),
+  outsideArea: L("Aha hantu hari hanze y'agace gakoreshwa", 'That spot is outside the covered area', 'Ce lieu est hors de la zone couverte', 'Mahali hapo ni nje ya eneo linalohudumiwa'),
+  tooClose: L('Hitamo ahantu hatandukanye', 'Choose two different places', 'Choisissez deux lieux différents', 'Chagua sehemu mbili tofauti'),
+  notImported: L('Amakuru y’imihanda ataraba ahari. Baza umuyobozi wa sisitemu.', 'Road data has not been imported yet. Ask the administrator.', "Les données routières ne sont pas encore importées.", 'Data ya barabara haijapakiwa bado.'),
+  locDenied: L('Ntitubashije kubona aho uri', 'Could not get your location', 'Position introuvable', 'Imeshindwa kupata eneo lako'),
+  apiError: L('Seriveri ntibonetse. Ongera ugerageze.', 'Cannot reach the server. Try again in a moment.', 'Serveur injoignable. Réessayez dans un instant.', 'Seva haipatikani. Jaribu tena.'),
+};
+
+export function t(lang, key, vars) {
+  let s = D[key]?.[lang] ?? D[key]?.en ?? key;
+  if (vars) for (const [k, v] of Object.entries(vars)) s = s.replace(`{${k}}`, v);
+  return s;
+}

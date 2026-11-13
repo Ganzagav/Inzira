@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "author": "Inzira",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "board-ssd1306", "id": "oled", "top": -140, "left": 180, "attrs": { "i2cAddress": "0x3c" } },
+    { "type": "wokwi-potentiometer", "id": "pot", "top": 100, "left": 300, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "b1", "top": 240, "left": 120, "attrs": { "color": "yellow" } },
+    { "type": "wokwi-pushbutton", "id": "b2", "top": 240, "left": 200, "attrs": { "color": "orange" } },
+    { "type": "wokwi-pushbutton", "id": "b3", "top": 240, "left": 280, "attrs": { "color": "red" } },
+    { "type": "wokwi-pushbutton", "id": "b4", "top": 240, "left": 360, "attrs": { "color": "green" } },
+    { "type": "wokwi-buzzer", "id": "bz", "top": 40, "left": -120, "attrs": { "volume": "0.1" } },
+    { "type": "wokwi-led", "id": "led", "top": 130, "left": -120, "attrs": { "color": "green" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 190, "left": -130, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    ["esp:TX", "$serialMonitor:RX", "", []],
+    ["esp:RX", "$serialMonitor:TX", "", []],
+    ["esp:3V3", "oled:VCC", "red", []],
+    ["esp:GND.1", "oled:GND", "black", []],
+    ["esp:21", "oled:SDA", "green", []],
+    ["esp:22", "oled:SCL", "blue", []],
+    ["esp:3V3", "pot:VCC", "red", []],
+    ["esp:GND.1", "pot:GND", "black", []],
+    ["esp:34", "pot:SIG", "orange", []],
+    ["esp:18", "b1:1.l", "yellow", []], ["b1:2.l", "esp:GND.1", "black", []],
+    ["esp:19", "b2:1.l", "orange", []], ["b2:2.l", "esp:GND.1", "black", []],
+    ["esp:23", "b3:1.l", "red", []],    ["b3:2.l", "esp:GND.1", "black", []],
+    ["esp:25", "b4:1.l", "green", []],  ["b4:2.l", "esp:GND.1", "black", []],
+    ["esp:5", "bz:2", "purple", []], ["bz:1", "esp:GND.1", "black", []],
+    ["esp:2", "r1:1", "green", []], ["r1:2", "led:A", "green", []], ["led:C", "esp:GND.1", "black", []]
+  ],
+  "dependencies": {}
+}
